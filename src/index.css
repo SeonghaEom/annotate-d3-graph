@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#brat-frontend-editor .background0 {
+  stroke: none;
+  fill: #ffffff;
+}
+
+#brat-frontend-editor .background1 {
+  stroke: none;
+  fill: #eeeeee;
+}
+
+#brat-frontend-editor .backgroundHighlight {
+  stroke: none;
+  fill: #ffff99;
+}
