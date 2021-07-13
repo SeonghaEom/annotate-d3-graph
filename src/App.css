@@ -41,4 +41,16 @@
   display: flex;
   flex-direction: row;
   height: 100%;
+  flex-flow: row wrap;
+  background-color: lightgrey;
+  font-size: 30px;
+}
+
+mark {
+  background-color: lightpink;
+  color: black;
+}
+
+text {
+  font-size: 30px;
 }

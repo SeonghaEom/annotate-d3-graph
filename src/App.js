@@ -61,9 +61,10 @@ function App() {
 			}
 			else { return <text> {token.text} </text> }
 		}
-
+		
+		// parse into list of tokens
 		const parseText = () => {
-			// parse into list of tokens
+			
 			// console.log("parseText ", tokenDict);
 			return tokenDict.map((token, i) => (
 			<div key={i} onMouseUp={(event) => handleMouseUp(event)} id={i}>
@@ -73,7 +74,7 @@ function App() {
 		}
 
     const handleMouseUp = (e) => {
-        // console.log("handleMouseUp ", e.target.parentElement, e.target.innerHTML);
+        console.log("handleMouseUp ", e.target.parentElement, e.target.innerHTML);
         dispatch(allActions.tokenActions.update_tokenDict(e.target.parentElement.id, "coreference"));
 				setSelected(e.target.innerHTML)
 
