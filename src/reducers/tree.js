@@ -19,7 +19,7 @@ const addChildNode = (state, text) => {
   return data;
 };
 
-function findNested(obj, key, value) {
+function findNested(obj, value) {
   // Base case
   if (obj.name === value) {
     return obj;
@@ -28,7 +28,7 @@ function findNested(obj, key, value) {
     for (var i = 0; i < len; i++) {
       // console.log(obj.children[i], value);
       {
-        var found = findNested(obj.children[i], key, value);
+        var found = findNested(obj.children[i], value);
         if (found) {
           // If the object was found in the recursive call, bubble it up.
           return found;
@@ -41,8 +41,8 @@ function findNested(obj, key, value) {
 const addChildNodeFromParent = (state, text, parent) => {
   // console.log("state ", state)
   const data = clone(state);
-  const target = findNested(data, "name", parent);
-  // console.log("target", target);
+  const target = findNested(data, parent) ? findNested(data, parent) : addChildNode(state, parent);
+  console.log("target", target);
   target.children.push({
     name: text,
     children: [],
