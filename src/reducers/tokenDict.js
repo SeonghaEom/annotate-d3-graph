@@ -24,7 +24,9 @@ const tokenDict = (state = sample, action) => {
     case 'UPDATE_TOKENDICT':
       console.log(action.type, action.payload)
       var cloned = clone(state);
-      cloned[action.payload.tokenId].label = action.payload.label;
+      action.payload.tokenId.forEach((id) => {
+        cloned[id].label = action.payload.label;
+      })
       return cloned;
     default:
       return state;
